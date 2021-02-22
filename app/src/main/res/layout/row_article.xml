@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="avm"
+            type="com.learn.mvvmapplication.viewmodel.ArticleViewModel"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/rounded_background_white">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Some random food talk"
+            android:layout_marginBottom="2dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@{avm.getTitle()}"/>
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Eating outside is more fun"
+            android:layout_marginBottom="5dp"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="@android:color/darker_gray"
+            android:text="@{avm.getSubtitle()}"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            android:text="@{avm.getFormattedDate()}"/>
+
+        <TextView
+            android:id="@+id/excerpt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Choose meals that contain a balance of lean proteins (like fish, chicken, or beans if you're a vegetarian), fruits and vegetables (fries and potato chips don't qualify as veggies!), and whole grains (like whole-wheat bread and brown rice). That's why a turkey sandwich on whole wheat with lettuce and tomato is a better choice than a cheeseburger on a white bun."
+            android:layout_marginBottom="5dp"
+            android:textSize="14sp"
+            android:text="@{avm.getExcerpt()}"/>
+
+    </LinearLayout>
+</layout>
